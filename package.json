@@ -9,7 +9,6 @@
     "lint:fix": "eslint . --fix",
     "prettier:check": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
     "prettier:fix": "prettier --write \"**/*.+(js|ts|json)\"",
-    "prepare": "husky install",
     "lint-prettier": "yarn lint:check && yarn prettier:check",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,10 +18,11 @@
     "src/**/*.ts": "yarn lint-prettier"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
+    "@types/jsonwebtoken": "^9.0.6",
     "eslint-config-prettier": "^8.8.0",
-    "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
     "ts-node-dev": "^2.0.0",
@@ -31,11 +31,13 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.59.11",
     "@typescript-eslint/parser": "^5.59.11",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "eslint": "^8.42.0",
     "express": "^4.18.2",
     "http-status": "^1.6.2",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.2.1",
     "winston": "^3.9.0",
     "winston-daily-rotate-file": "^4.7.1",

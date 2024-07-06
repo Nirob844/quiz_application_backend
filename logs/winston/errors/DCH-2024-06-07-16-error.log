@@ -1,0 +1,46 @@
+{
+  service: 'user-service',
+  ok: 0,
+  code: 8000,
+  codeName: 'AtlasError',
+  connectionGeneration: 0,
+  level: 'error',
+  message: 'failed to connect bad auth : Authentication failed.',
+  stack: 'MongoServerError: bad auth : Authentication failed.\n' +
+    '    at Connection.onMessage (C:\\project\\job-task\\quiz_application_backend\\node_modules\\mongodb\\src\\cmap\\connection.ts:413:18)\n' +
+    '    at MessageStream.<anonymous> (C:\\project\\job-task\\quiz_application_backend\\node_modules\\mongodb\\src\\cmap\\connection.ts:243:56)\n' +
+    '    at MessageStream.emit (node:events:514:28)\n' +
+    '    at processIncomingData (C:\\project\\job-task\\quiz_application_backend\\node_modules\\mongodb\\src\\cmap\\message_stream.ts:187:12)\n' +
+    '    at MessageStream._write (C:\\project\\job-task\\quiz_application_backend\\node_modules\\mongodb\\src\\cmap\\message_stream.ts:68:5)\n' +
+    '    at writeOrBuffer (node:internal/streams/writable:556:12)\n' +
+    '    at _write (node:internal/streams/writable:490:10)\n' +
+    '    at MessageStream.Writable.write (node:internal/streams/writable:494:10)\n' +
+    '    at TLSSocket.ondata (node:internal/streams/readable:985:22)\n' +
+    '    at TLSSocket.emit (node:events:514:28)',
+  label: 'DCH',
+  timestamp: '2024-07-06T10:30:03.915Z',
+  [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+}
+{
+  service: 'user-service',
+  ok: 0,
+  code: 8000,
+  codeName: 'AtlasError',
+  connectionGeneration: 0,
+  level: 'error',
+  message: 'failed to connect bad auth : authentication failed',
+  stack: 'MongoServerError: bad auth : authentication failed\n' +
+    '    at Connection.onMessage (C:\\project\\job-task\\quiz_application_backend\\node_modules\\mongodb\\src\\cmap\\connection.ts:413:18)\n' +
+    '    at MessageStream.<anonymous> (C:\\project\\job-task\\quiz_application_backend\\node_modules\\mongodb\\src\\cmap\\connection.ts:243:56)\n' +
+    '    at MessageStream.emit (node:events:514:28)\n' +
+    '    at processIncomingData (C:\\project\\job-task\\quiz_application_backend\\node_modules\\mongodb\\src\\cmap\\message_stream.ts:187:12)\n' +
+    '    at MessageStream._write (C:\\project\\job-task\\quiz_application_backend\\node_modules\\mongodb\\src\\cmap\\message_stream.ts:68:5)\n' +
+    '    at writeOrBuffer (node:internal/streams/writable:556:12)\n' +
+    '    at _write (node:internal/streams/writable:490:10)\n' +
+    '    at MessageStream.Writable.write (node:internal/streams/writable:494:10)\n' +
+    '    at TLSSocket.ondata (node:internal/streams/readable:985:22)\n' +
+    '    at TLSSocket.emit (node:events:514:28)',
+  label: 'DCH',
+  timestamp: '2024-07-06T10:31:43.025Z',
+  [Symbol(errorLabels)]: Set(2) { 'HandshakeError', 'ResetPool' }
+}

@@ -1,17 +1,16 @@
-import { Model } from 'mongoose';
-export type UserName = {
-  firstName: string;
-  lastName: string;
-  middleName?: string;
-};
+import { Document, Model } from 'mongoose';
 
-export type IUser = {
-  phoneNumber: string;
-  // role: 'seller' | 'buyer';
-  // password: string;
-  // name: UserName;
-  // address: string;
-  // budget: number;
-  // income: number;
-};
-export type UserModel = Model<IUser, Record<string, unknown>>;
+export interface IUser extends Document {
+  fullName: string;
+  email: string;
+  password: string;
+  role: 'user' | 'admin';
+}
+
+export interface IUserFilters {
+  searchTerm?: string;
+  email?: string;
+  fullName?: string;
+}
+
+export type UserModel = Model<IUser>;
