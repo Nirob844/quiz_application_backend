@@ -1,5 +1,6 @@
 import bcrypt from 'bcryptjs';
 import { CallbackError, Schema, model } from 'mongoose';
+import config from '../../../config';
 import { IUser, UserModel } from './user.interface';
 
 const userSchema = new Schema<IUser>(
@@ -32,12 +33,30 @@ const userSchema = new Schema<IUser>(
 userSchema.pre('save', async function (next: (err?: CallbackError) => void) {
   if (!this.isModified('password')) return next();
   try {
-    const salt = await bcrypt.genSalt(10);
-    this.password = await bcrypt.hash(this.password, salt);
+    const saltRounds = Number(config.bcrypt_salt_rounds) || 10;
+    this.password = await bcrypt.hash(this.password, saltRounds);
     next();
   } catch (err) {
     next(err as CallbackError);
   }
 });
+
+// Static method to check if user exists
+userSchema.statics.isUserExist = async function (
+  email: string
+): Promise<Pick<IUser, 'id' | 'password' | 'role' | 'email'> | null> {
+  return await this.findOne(
+    { email },
+    { _id: 1, password: 1, role: 1, email: 1 }
+  );
+};
+
+// Static method to check if password matches
+userSchema.statics.isPasswordMatched = async function (
+  givenPassword: string,
+  savedPassword: string
+): Promise<boolean> {
+  return await bcrypt.compare(givenPassword, savedPassword);
+};
 
 export const User = model<IUser, UserModel>('User', userSchema);

@@ -29,6 +29,11 @@
             "date": 1720268314391,
             "name": "C:\\project\\job-task\\quiz_application_backend\\logs\\winston\\errors\\DCH-2024-06-07-18-error.log",
             "hash": "1939794fcbf30b2b7c42d119ffc4bce2c65b44cecefa8f5f4ab581fc3f1c3f6e"
+        },
+        {
+            "date": 1720274599762,
+            "name": "C:\\project\\job-task\\quiz_application_backend\\logs\\winston\\errors\\DCH-2024-06-07-20-error.log",
+            "hash": "2ce5914556e9f1b958278c81d6e3b92e93478c6675ff6c66b2f4d57d61703ff3"
         }
     ],
     "hashType": "sha256"

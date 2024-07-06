@@ -13,4 +13,12 @@ export interface IUserFilters {
   fullName?: string;
 }
 
-export type UserModel = Model<IUser>;
+export type UserModel = Model<IUser> & {
+  isUserExist(
+    email: string
+  ): Promise<Pick<IUser, 'id' | 'password' | 'role' | 'email'> | null>;
+  isPasswordMatched(
+    givenPassword: string,
+    savedPassword: string
+  ): Promise<boolean>;
+};
