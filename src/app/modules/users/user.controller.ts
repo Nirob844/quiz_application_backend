@@ -51,8 +51,9 @@ const getSingleUser = catchAsync(async (req: Request, res: Response) => {
   });
 });
 const getUserProfile = catchAsync(async (req: Request, res: Response) => {
-  const { id } = req.user as JwtPayload; // Perform a type assertion to JwtPayload
-  const result = await UserService.getUserProfile(id);
+  const user = req.user as JwtPayload;
+
+  const result = await UserService.getUserProfile(user.id);
 
   sendResponse<IUser>(res, {
     statusCode: httpStatus.OK,

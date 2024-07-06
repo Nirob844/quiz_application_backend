@@ -78,7 +78,7 @@ const getSingleUser = async (id: string): Promise<IUser | null> => {
 };
 
 const getUserProfile = async (id: string): Promise<IUser | null> => {
-  const result = await User.findById({ _id: id });
+  const result = await User.findById(id);
   if (!result) {
     throw new ApiError(httpStatus.NOT_FOUND, 'User not found');
   }
@@ -89,7 +89,7 @@ const updateUserProfile = async (
   id: string,
   payload: Partial<IUser>
 ): Promise<IUser | null> => {
-  const isExist = await User.findOne({ _id: id });
+  const isExist = await User.findById(id);
 
   if (!isExist) {
     throw new ApiError(httpStatus.NOT_FOUND, 'user not found !');

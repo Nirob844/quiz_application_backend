@@ -57,6 +57,7 @@ const getAllQuestions = async (
     andConditions.length > 0 ? { $and: andConditions } : {};
 
   const result = await Question.find(whereConditions)
+    .populate('quizId')
     .sort(sortConditions)
     .skip(skip)
     .limit(limit);
@@ -74,7 +75,7 @@ const getAllQuestions = async (
 };
 
 const getSingleQuestion = async (id: string): Promise<IQuestion | null> => {
-  const result = await Question.findById(id).populate('seller');
+  const result = await Question.findById(id).populate('quizId');
   if (!result) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Question not found');
   }

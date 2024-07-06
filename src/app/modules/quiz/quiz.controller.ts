@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import httpStatus from 'http-status';
 
+import { JwtPayload } from 'jsonwebtoken';
 import catchAsync from '../../../shared/catchAsync';
 import sendResponse from '../../../shared/sendResponse';
 import { IQuiz } from './quiz.interface';
@@ -8,7 +9,9 @@ import { QuizService } from './quiz.service';
 
 const createQuiz = catchAsync(async (req: Request, res: Response) => {
   const { ...questionData } = req.body;
-  const result = await QuizService.createQuiz(questionData);
+  const user = req.user as JwtPayload;
+
+  const result = await QuizService.createQuiz(questionData, user);
 
   sendResponse<IQuiz>(res, {
     statusCode: httpStatus.OK,
@@ -25,6 +28,7 @@ const getAllQuiz = catchAsync(async (req: Request, res: Response) => {
     statusCode: httpStatus.OK,
     success: true,
     message: 'Quiz fetched successfully',
+    data: result,
   });
 });
 

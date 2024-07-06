@@ -4,9 +4,11 @@ import { IQuizAttempt } from './quizAttempt.interface';
 import { QuizAttempt } from './quizAttempt.model';
 
 const createQuizAttempt = async (
-  question: IQuizAttempt
+  quiz: IQuizAttempt,
+  user: any
 ): Promise<IQuizAttempt | null> => {
-  const createdQuizAttempt = await QuizAttempt.create(question);
+  const quizData = { ...quiz, userId: user.id };
+  const createdQuizAttempt = await QuizAttempt.create(quizData);
 
   if (!createdQuizAttempt) {
     throw new ApiError(400, 'failed to create QuizAttempt !');
@@ -24,7 +26,7 @@ const getSingleQuizAttempt = async (
 ): Promise<IQuizAttempt | null> => {
   const result = await QuizAttempt.findById(id).populate(
     'quiz',
-    'question',
+    'quiz',
     'user'
   );
   if (!result) {

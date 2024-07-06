@@ -3,8 +3,9 @@ import ApiError from '../../../errors/ApiError';
 import { IQuiz } from './quiz.interface';
 import { Quiz } from './quiz.model';
 
-const createQuiz = async (question: IQuiz): Promise<IQuiz | null> => {
-  const createdQuiz = await Quiz.create(question);
+const createQuiz = async (quiz: IQuiz, user: any): Promise<IQuiz | null> => {
+  const quizData = { ...quiz, createdBy: user.id };
+  const createdQuiz = await Quiz.create(quizData);
 
   if (!createdQuiz) {
     throw new ApiError(400, 'failed to create Quiz !');
@@ -13,7 +14,7 @@ const createQuiz = async (question: IQuiz): Promise<IQuiz | null> => {
 };
 
 const getAllQuiz = async (): Promise<IQuiz[] | null> => {
-  const result = await Quiz.find({});
+  const result = await Quiz.find({}).populate('questions', 'createdBy');
   return result;
 };
 
@@ -29,8 +30,8 @@ const updateQuiz = async (
   id: string,
   payload: Partial<IQuiz>
 ): Promise<IQuiz | null> => {
-  const question = await Quiz.findById(id);
-  if (!question) {
+  const quiz = await Quiz.findById(id);
+  if (!quiz) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Quiz not found');
   }
 
@@ -42,8 +43,8 @@ const updateQuiz = async (
 };
 
 const deleteQuiz = async (id: string): Promise<IQuiz | null> => {
-  const question = await Quiz.findById(id);
-  if (!question) {
+  const quiz = await Quiz.findById(id);
+  if (!quiz) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Quiz not found');
   }
   const result = await Quiz.findByIdAndDelete(id);

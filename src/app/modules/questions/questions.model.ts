@@ -24,5 +24,4 @@ const QuestionSchema = new Schema<IQuestion>({
   },
 });
 
-// Export the Question model
 export const Question = model<IQuestion>('Question', QuestionSchema);

@@ -6,12 +6,6 @@ const QuizSchema = new Schema<IQuiz>({
     type: String,
     required: true,
   },
-  questions: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Question',
-    },
-  ],
   timeLimit: {
     type: Number,
     required: true,
