@@ -1,0 +1,15 @@
+{
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "C:\\project\\job-task\\quiz_application_backend\\logs\\winston\\errors\\.d297ee9dd64a33574d407db44c0fd44a28c82c35-audit.json",
+  "files": [
+    {
+      "date": 1720254983826,
+      "name": "C:\\project\\job-task\\quiz_application_backend\\logs\\winston\\errors\\DCH-2024-06-07-14-error.log",
+      "hash": "88bca498091b674ba05a778dedf2d97c20d59e5d56a5450faf00650b3c562cd5"
+    }
+  ],
+  "hashType": "sha256"
+}

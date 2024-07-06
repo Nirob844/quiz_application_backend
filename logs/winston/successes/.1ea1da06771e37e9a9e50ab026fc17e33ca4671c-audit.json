@@ -1,0 +1,15 @@
+{
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "C:\\project\\job-task\\quiz_application_backend\\logs\\winston\\successes\\.1ea1da06771e37e9a9e50ab026fc17e33ca4671c-audit.json",
+  "files": [
+    {
+      "date": 1720254983822,
+      "name": "C:\\project\\job-task\\quiz_application_backend\\logs\\winston\\successes\\DCH-2024-06-07-14-success.log",
+      "hash": "f182935b3dcc8900799020495ffd5f86d8543de67310cd4d46423e886e506b46"
+    }
+  ],
+  "hashType": "sha256"
+}
