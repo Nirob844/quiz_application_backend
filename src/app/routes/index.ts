@@ -1,5 +1,6 @@
 import express from 'express';
 import { QuestionRoutes } from '../modules/questions/questions.route';
+import { QuizRoutes } from '../modules/quiz/quiz.route';
 import { UserRoutes } from '../modules/users/user.route';
 const router = express.Router();
 
@@ -11,6 +12,10 @@ const moduleRoutes = [
   {
     path: '/questions',
     route: QuestionRoutes,
+  },
+  {
+    path: '/quizzes',
+    route: QuizRoutes,
   },
 ];
 moduleRoutes.forEach(route => {
