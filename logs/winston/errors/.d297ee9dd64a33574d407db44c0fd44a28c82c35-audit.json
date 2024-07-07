@@ -49,6 +49,21 @@
             "date": 1720285329007,
             "name": "C:\\project\\job-task\\quiz_application_backend\\logs\\winston\\errors\\DCH-2024-06-07-23-error.log",
             "hash": "3e9ec56ba5a70a9ec108cec6ee97849b47a645763fa12b5b4e45e50a10ee3f9e"
+        },
+        {
+            "date": 1720340538105,
+            "name": "C:\\project\\job-task\\quiz_application_backend\\logs\\winston\\errors\\DCH-2024-07-07-14-error.log",
+            "hash": "ab72c8f82bcca7e649b951bdf06562ed37e4afa523c8796444fe3a8200ee301d"
+        },
+        {
+            "date": 1720353360879,
+            "name": "C:\\project\\job-task\\quiz_application_backend\\logs\\winston\\errors\\DCH-2024-07-07-17-error.log",
+            "hash": "6d6d11dcc5c676d654ef12517b5eb95057bef29ab254c0df9bb2e735bf383ee5"
+        },
+        {
+            "date": 1720353674347,
+            "name": "C:\\project\\job-task\\quiz_application_backend\\logs\\winston\\errors\\DCH-2024-07-07-18-error.log",
+            "hash": "341bd711fcccc28bc8681c1f99d63977f177c733052e3bd4dd4921c238701bf2"
         }
     ],
     "hashType": "sha256"

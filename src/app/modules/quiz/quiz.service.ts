@@ -14,7 +14,7 @@ const createQuiz = async (quiz: IQuiz, user: any): Promise<IQuiz | null> => {
 };
 
 const getAllQuiz = async (): Promise<IQuiz[] | null> => {
-  const result = await Quiz.find({}).populate('questions', 'createdBy');
+  const result = await Quiz.find({});
   return result;
 };
 
